@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hidden Minx Hair Studio in Highton — friendly, professional stylists who listen. Cuts, colour & styling on Barrabool Rd. Call (03) 5242 8884.">
+<title>Hidden Minx Hair Studio | Highton's Favourite Local Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+--blue-900: #0c2340;
+--blue-700: #1a3a5c;
+--blue-600: #1e5a8a;
+--blue-500: #2874a6;
+--blue-400: #3498db;
+--blue-100: #e8f4fd;
+--blue-50: #f0f8ff;
+--warm-grey-100: #f7f5f3;
+--warm-grey-200: #ede9e5;
+--warm-grey-300: #d5cfc8;
+--warm-grey-500: #8a8279;
+--white: #ffffff;
+--text-dark: #1a1a2e;
+--text-body: #3d3d4e;
+--text-muted: #6b6b7b;
+--gold: #d4a843;
+--gold-light: #f5e6c4;
+--shadow-sm: 0 2px 8px rgba(12,35,64,0.06);
+--shadow-md: 0 8px 24px rgba(12,35,64,0.1);
+--shadow-lg: 0 16px 48px rgba(12,35,64,0.14);
+--radius-sm: 8px;
+--radius-md: 14px;
+--radius-lg: 20px;
+--radius-xl: 28px;
+}
+
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+color: var(--text-body);
+line-height: 1.7;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Plus Jakarta Sans', sans-serif;
+color: var(--text-dark);
+line-height: 1.25;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+.container {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: rgba(255,255,255,0.97);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(12,35,64,0.06);
+transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 72px;
+}
+
+.nav-logo {
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 800;
+font-size: 1.35rem;
+color: var(--blue-900);
+letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+color: var(--blue-400);
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 32px;
+list-style: none;
+}
+
+.nav-links a {
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 600;
+font-size: 0.9rem;
+color: var(--text-body);
+transition: color 0.25s;
+position: relative;
+}
+
+.nav-links a::after {
+content: '';
+position: absolute;
+bottom: -4px;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--blue-400);
+transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+color: var(--blue-600);
+}
+
+.nav-links a:hover::after {
+width: 100%;
+}
+
+.nav-cta-link {
+background: var(--blue-600);
+color: var(--white) !important;
+padding: 10px 22px;
+border-radius: 50px;
+transition: background 0.3s, transform 0.2s !important;
+}
+
+.nav-cta-link::after {
+display: none !important;
+}
+
+.nav-cta-link:hover {
+background: var(--blue-700);
+transform: translateY(-1px);
+color: var(--white) !important;
+}
+
+.hamburger {
+display: none;
+background: none;
+border: none;
+cursor: pointer;
+width: 48px;
+height: 48px;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 5px;
+}
+
+.hamburger span {
+display: block;
+width: 26px;
+height: 2.5px;
+background: var(--blue-900);
+border-radius: 2px;
+transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu {
+display: none;
+background: var(--white);
+border-top: 1px solid var(--warm-grey-200);
+padding: 16px 24px 24px;
+}
+
+.mobile-menu.open {
+display: block;
+animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+from { opacity: 0.5; transform: translateY(-10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu a {
+display: block;
+padding: 14px 0;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 600;
+font-size: 1rem;
+color: var(--text-body);
+border-bottom: 1px solid var(--warm-grey-100);
+}
+
+.mobile-menu a:last-child {
+border-bottom: none;
+}
+
+/* ========== HERO ========== */
+.hero {
+position: relative;
+min-height: 92vh;
+display: flex;
+align-items: center;
+overflow: hidden;
+background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 35%, var(--blue-600) 70%, var(--blue-400) 100%);
+}
+
+.hero::before {
+content: '';
+position: absolute;
+inset: 0;
+background:
+radial-gradient(circle at 20% 80%, rgba(52,152,219,0.2) 0%, transparent 50%),
+radial-gradient(circle at 80% 20%, rgba(212,168,67,0.15) 0%, transparent 40%),
+radial-gradient(circle at 60% 60%, rgba(255,255,255,0.04) 0%, transparent 30%);
+}
+
+.hero-pattern {
+position: absolute;
+inset: 0;
+overflow: hidden;
+}
+
+.hero-pattern svg {
+position: absolute;
+width: 100%;
+height: 100%;
+}
+
+.hero-blob-1 {
+position: absolute;
+top: -10%;
+right: -5%;
+width: 600px;
+height: 600px;
+background: radial-gradient(ellipse, rgba(52,152,219,0.2), transparent 70%);
+border-radius: 50%;
+filter: blur(40px);
+}
+
+.hero-blob-2 {
+position: absolute;
+bottom: -15%;
+left: -10%;
+width: 500px;
+height: 500px;
+background: radial-gradient(ellipse, rgba(212,168,67,0.12), transparent 70%);
+border-radius: 50%;
+filter: blur(50px);
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 720px;
+padding: 80px 0;
+}
+
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(255,255,255,0.12);
+border: 1px solid rgba(255,255,255,0.2);
+border-radius: 50px;
+padding: 8px 20px;
+margin-bottom: 28px;
+color: rgba(255,255,255,0.9);
+font-size: 0.85rem;
+font-weight: 500;
+backdrop-filter: blur(8px);
+}
+
+.hero-badge i {
+color: var(--gold);
+}
+
+.hero h1 {
+font-size: clamp(2.4rem, 5.5vw, 4rem);
+font-weight: 800;
+color: var(--white);
+margin-bottom: 22px;
+letter-spacing: -1px;
+line-height: 1.12;
+}
+
+.hero h1 em {
+font-style: normal;
+color: var(--gold);
+position: relative;
+}
+
+.hero p {
+font-size: clamp(1rem, 1.8vw, 1.2rem);
+color: rgba(255,255,255,0.85);
+margin-bottom: 36px;
+max-width: 600px;
+line-height: 1.75;
+}
+
+.hero-buttons {
+display: flex;
+gap: 16px;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: var(--gold);
+color: var(--blue-900);
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 1rem;
+padding: 16px 32px;
+border-radius: 50px;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+min-height: 48px;
+}
+
+.btn-primary:hover {
+background: #e0b44d;
+transform: translateY(-2px);
+box-shadow: 0 8px 24px rgba(212,168,67,0.35);
+}
+
+.btn-outline {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: transparent;
+color: var(--white);
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 1rem;
+padding: 16px 32px;
+border-radius: 50px;
+border: 2px solid rgba(255,255,255,0.4);
+cursor: pointer;
+transition: all 0.3s ease;
+min-height: 48px;
+}
+
+.btn-outline:hover {
+background: rgba(255,255,255,0.1);
+border-color: rgba(255,255,255,0.7);
+transform: translateY(-2px);
+}
+
+.hero-decorative {
+position: absolute;
+right: -40px;
+top: 50%;
+transform: translateY(-50%);
+z-index: 1;
+width: 500px;
+height: 500px;
+}
+
+/* ========== ABOUT ========== */
+.about {
+padding: 100px 0;
+background: var(--white);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1.2fr 0.8fr;
+gap: 60px;
+align-items: start;
+}
+
+.section-label {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 0.8rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: var(--blue-500);
+margin-bottom: 16px;
+}
+
+.section-label::before {
+content: '';
+width: 28px;
+height: 2px;
+background: var(--blue-400);
+border-radius: 2px;
+}
+
+.about-text h2 {
+font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+font-weight: 800;
+margin-bottom: 24px;
+letter-spacing: -0.5px;
+color: var(--blue-900);
+}
+
+.about-text p {
+font-size: 1.05rem;
+line-height: 1.85;
+color: var(--text-body);
+margin-bottom: 24px;
+}
+
+.stats-grid {
+display: grid;
+gap: 20px;
+}
+
+.stat-card {
+background: var(--blue-50);
+border: 1px solid rgba(30,90,138,0.08);
+border-radius: var(--radius-lg);
+padding: 32px 28px;
+text-align: centre;
+text-align: center;
+transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+transform: translateY(-4px);
+box-shadow: var(--shadow-md);
+background: var(--white);
+border-color: var(--blue-400);
+}
+
+.stat-number {
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-size: 2.6rem;
+font-weight: 800;
+color: var(--blue-600);
+line-height: 1;
+margin-bottom: 6px;
+}
+
+.stat-label {
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-size: 0.92rem;
+font-weight: 600;
+color: var(--text-muted);
+}
+
+/* ========== SERVICES ========== */
+.services {
+padding: 100px 0;
+background: var(--warm-grey-100);
+}
+
+.section-header {
+text-align: center;
+max-width: 650px;
+margin: 0 auto 60px;
+}
+
+.section-header .section-label {
+justify-content: center;
+}
+
+.section-header h2 {
+font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+font-weight: 800;
+color: var(--blue-900);
+margin-bottom: 14px;
+letter-spacing: -0.5px;
+}
+
+.section-header p {
+font-size: 1.05rem;
+color: var(--text-muted);
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.service-card {
+background: var(--white);
+border-radius: var(--radius-lg);
+padding: 36px 30px;
+border: 1px solid rgba(12,35,64,0.05);
+transition: all 0.35s ease;
+position: relative;
+overflow: hidden;
+}
+
+.service-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 3px;
+background: linear-gradient(90deg, var(--blue-400), var(--gold));
+transform: scaleX(0);
+transition: transform 0.35s ease;
+transform-origin: left;
+}
+
+.service-card:hover {
+transform: translateY(-6px);
+box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover::before {
+transform: scaleX(1);
+}
+
+.service-icon {
+width: 52px;
+height: 52px;
+background: var(--blue-50);
+border-radius: var(--radius-md);
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+color: var(--blue-600);
+font-size: 1.2rem;
+transition: all 0.3s;
+}
+
+.service-card:hover .service-icon {
+background: var(--blue-600);
+color: var(--white);
+}
+
+.service-card h3 {
+font-size: 1.15rem;
+font-weight: 700;
+margin-bottom: 12px;
+color: var(--blue-900);
+}
+
+.service-card p {
+font-size: 0.92rem;
+line-height: 1.7;
+color: var(--text-muted);
+}
+
+/* ========== SELLING POINTS ========== */
+.selling-points {
+padding: 100px 0;
+background: var(--white);
+}
+
+.selling-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 32px;
+}
+
+.selling-card {
+display: flex;
+gap: 24px;
+padding: 36px;
+border-radius: var(--radius-lg);
+background: var(--blue-50);
+border: 1px solid transparent;
+transition: all 0.3s ease;
+}
+
+.selling-card:hover {
+background: var(--white);
+border-color: var(--blue-400);
+box-shadow: var(--shadow-md);
+transform: translateY(-3px);
+}
+
+.selling-icon {
+flex-shrink: 0;
+width: 56px;
+height: 56px;
+background: linear-gradient(135deg, var(--blue-600), var(--blue-400));
+border-radius: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--white);
+font-size: 1.25rem;
+}
+
+.selling-card h3 {
+font-size: 1.1rem;
+font-weight: 700;
+margin-bottom: 10px;
+color: var(--blue-900);
+}
+
+.selling-card p {
+font-size: 0.92rem;
+line-height: 1.7;
+color: var(--text-muted);
+}
+
+/* ========== PROCESS ========== */
+.process {
+padding: 100px 0;
+background: linear-gradient(180deg, var(--blue-900), var(--blue-700));
+position: relative;
+}
+
+.process .section-header h2 {
+color: var(--white);
+}
+
+.process .section-header p {
+color: rgba(255,255,255,0.65);
+}
+
+.process .section-label {
+color: var(--gold);
+}
+
+.process .section-label::before {
+background: var(--gold);
+}
+
+.process-timeline {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+position: relative;
+}
+
+.process-timeline::before {
+content: '';
+position: absolute;
+top: 44px;
+left: calc(12.5% + 10px);
+right: calc(12.5% + 10px);
+height: 2px;
+background: rgba(255,255,255,0.15);
+}
+
+.process-step {
+text-align: center;
+position: relative;
+z-index: 1;
+}
+
+.step-number {
+width: 56px;
+height: 56px;
+margin: 0 auto 20px;
+background: var(--gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 800;
+font-size: 1.3rem;
+color: var(--blue-900);
+position: relative;
+}
+
+.step-number::after {
+content: '';
+position: absolute;
+inset: -6px;
+border-radius: 50%;
+border: 2px solid rgba(212,168,67,0.3);
+}
+
+.process-step h3 {
+font-size: 1.05rem;
+font-weight: 700;
+color: var(--white);
+margin-bottom: 10px;
+}
+
+.process-step p {
+font-size: 0.88rem;
+color: rgba(255,255,255,0.65);
+line-height: 1.65;
+padding: 0 8px;
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials {
+padding: 100px 0;
+background: var(--warm-grey-100);
+position: relative;
+}
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 28px;
+}
+
+.testimonial-card {
+background: var(--white);
+border-radius: var(--radius-lg);
+padding: 36px 30px;
+box-shadow: var(--shadow-sm);
+border: 1px solid rgba(12,35,64,0.04);
+transition: all 0.3s;
+position: relative;
+}
+
+.testimonial-card:hover {
+transform: translateY(-4px);
+box-shadow: var(--shadow-md);
+}
+
+.testimonial-card::before {
+content: '"';
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-size: 4rem;
+font-weight: 800;
+color: var(--blue-100);
+position: absolute;
+top: 16px;
+right: 24px;
+line-height: 1;
+}
+
+.testimonial-stars {
+color: var(--gold);
+margin-bottom: 16px;
+font-size: 0.95rem;
+letter-spacing: 2px;
+}
+
+.testimonial-card blockquote {
+font-size: 0.95rem;
+line-height: 1.75;
+color: var(--text-body);
+margin-bottom: 20px;
+font-style: italic;
+}
+
+.testimonial-author {
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 0.92rem;
+color: var(--blue-900);
+}
+
+/* ========== FAQ ========== */
+.faq {
+padding: 100px 0;
+background: var(--white);
+}
+
+.faq-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: start;
+}
+
+.faq-intro h2 {
+font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+font-weight: 800;
+color: var(--blue-900);
+margin-bottom: 16px;
+}
+
+.faq-intro p {
+font-size: 1.05rem;
+color: var(--text-muted);
+margin-bottom: 28px;
+line-height: 1.8;
+}
+
+.faq-contact-box {
+background: var(--blue-50);
+border-radius: var(--radius-lg);
+padding: 28px;
+}
+
+.faq-contact-box p {
+font-size: 0.95rem;
+margin-bottom: 16px;
+color: var(--text-body);
+}
+
+.faq-contact-box a {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+color: var(--blue-600);
+font-size: 1.1rem;
+}
+
+.faq-items {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.faq-item {
+border: 1px solid var(--warm-grey-200);
+border-radius: var(--radius-md);
+overflow: hidden;
+transition: all 0.3s;
+}
+
+.faq-item.active {
+border-color: var(--blue-400);
+box-shadow: 0 4px 16px rgba(30,90,138,0.08);
+}
+
+.faq-question {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 24px;
+cursor: pointer;
+background: none;
+border: none;
+width: 100%;
+text-align: left;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 0.98rem;
+color: var(--blue-900);
+gap: 16px;
+min-height: 48px;
+}
+
+.faq-question:hover {
+background: var(--blue-50);
+}
+
+.faq-question i {
+flex-shrink: 0;
+transition: transform 0.3s;
+color: var(--blue-400);
+font-size: 0.85rem;
+}
+
+.faq-item.active .faq-question i {
+transform: rotate(180deg);
+}
+
+.faq-answer {
+display: none;
+padding: 0 24px 20px;
+font-size: 0.92rem;
+line-height: 1.75;
+color: var(--text-body);
+}
+
+.faq-item.active .faq-answer {
+display: block;
+}
+
+/* ========== HOURS & LOCATION ========== */
+.location {
+padding: 100px 0;
+background: var(--warm-grey-100);
+}
+
+.location-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+align-items: start;
+}
+
+.hours-card {
+background: var(--white);
+border-radius: var(--radius-lg);
+padding: 40px;
+box-shadow: var(--shadow-sm);
+}
+
+.hours-card h3 {
+font-size: 1.4rem;
+font-weight: 800;
+color: var(--blue-900);
+margin-bottom: 24px;
+}
+
+.hours-list {
+list-style: none;
+}
+
+.hours-list li {
+display: flex;
+justify-content: space-between;
+padding: 14px 0;
+border-bottom: 1px solid var(--warm-grey-100);
+font-size: 0.95rem;
+}
+
+.hours-list li:last-child {
+border-bottom: none;
+}
+
+.hours-list .day {
+font-weight: 600;
+color: var(--blue-900);
+}
+
+.hours-list .time {
+color: var(--text-muted);
+}
+
+.hours-list .closed {
+color: var(--warm-grey-500);
+font-style: italic;
+}
+
+.map-container {
+border-radius: var(--radius-lg);
+overflow: hidden;
+box-shadow: var(--shadow-md);
+aspect-ratio: 4/3;
+background: var(--warm-grey-200);
+}
+
+.map-container iframe {
+width: 100%;
+height: 100%;
+border: 0;
+}
+
+/* ========== CONTACT ========== */
+.contact {
+padding: 100px 0;
+background: var(--white);
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: start;
+}
+
+.contact-info {
+padding-right: 20px;
+}
+
+.contact-info h2 {
+font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+font-weight: 800;
+color: var(--blue-900);
+margin-bottom: 16px;
+}
+
+.contact-info > p {
+font-size: 1.05rem;
+color: var(--text-muted);
+margin-bottom: 32px;
+line-height: 1.8;
+}
+
+.call-cta {
+display: inline-flex;
+align-items: center;
+gap: 14px;
+background: var(--blue-600);
+color: var(--white);
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 1.2rem;
+padding: 20px 40px;
+border-radius: 60px;
+transition: all 0.3s;
+margin-bottom: 32px;
+min-height: 48px;
+}
+
+.call-cta:hover {
+background: var(--blue-700);
+transform: translateY(-2px);
+box-shadow: 0 12px 32px rgba(30,90,138,0.25);
+}
+
+.call-cta i {
+font-size: 1.3rem;
+}
+
+.contact-details {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+
+.contact-detail {
+display: flex;
+align-items: flex-start;
+gap: 14px;
+}
+
+.contact-detail i {
+width: 40px;
+height: 40px;
+background: var(--blue-50);
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--blue-600);
+flex-shrink: 0;
+font-size: 0.95rem;
+}
+
+.contact-detail span {
+font-size: 0.95rem;
+color: var(--text-body);
+line-height: 1.6;
+}
+
+.contact-form {
+background: var(--blue-50);
+border-radius: var(--radius-lg);
+padding: 40px;
+}
+
+.contact-form h3 {
+font-size: 1.3rem;
+font-weight: 700;
+color: var(--blue-900);
+margin-bottom: 24px;
+}
+
+.form-group {
+margin-bottom: 18px;
+}
+
+.form-group label {
+display: block;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 600;
+font-size: 0.88rem;
+color: var(--blue-900);
+margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 14px 18px;
+border: 1.5px solid var(--warm-grey-200);
+border-radius: var(--radius-sm);
+font-family: 'Inter', sans-serif;
+font-size: 0.95rem;
+transition: border-color 0.3s;
+background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: var(--blue-400);
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+.form-submit {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: var(--blue-600);
+color: var(--white);
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-weight: 700;
+font-size: 1rem;
+padding: 16px 32px;
+border-radius: 50px;
+border: none;
+cursor: pointer;
+transition: all 0.3s;
+min-height: 48px;
+}
+
+.form-submit:hover {
+background: var(--blue-700);
+transform: translateY(-2px);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+background: var(--blue-900);
+color: rgba(255,255,255,0.7);
+padding: 72px 0 0;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr;
+gap: 48px;
+padding-bottom: 48px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand h3 {
+font-size: 1.4rem;
+font-weight: 800;
+color: var(--white);
+margin-bottom: 14px;
+}
+
+.footer-brand h3 span {
+color: var(--gold);
+}
+
+.footer-brand p {
+font-size: 0.92rem;
+line-height: 1.7;
+max-width: 340px;
+}
+
+.footer h4 {
+font-size: 1rem;
+font-weight: 700;
+color: var(--white);
+margin-bottom: 20px;
+}
+
+.footer-links {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.footer-links a {
+font-size: 0.9rem;
+color: rgba(255,255,255,0.6);
+transition: color 0.2s;
+}
+
+.footer-links a:hover {
+color: var(--gold);
+}
+
+.footer-contact-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.footer-contact-list li {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 0.9rem;
+}
+
+.footer-contact-list i {
+color: var(--gold);
+width: 16px;
+font-size: 0.85rem;
+}
+
+.footer-bottom {
+text-align: center;
+padding: 28px 0;
+font-size: 0.85rem;
+color: rgba(255,255,255,0.4);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+.hero-decorative {
+display: none;
+}
+}
+
+@media (max-width: 768px) {
+.hamburger {
+display: flex;
+}
+
+.nav-links {
+display: none;
+}
+
+.hero {
+min-height: 80vh;
+}
+
+.hero-content {
+padding: 60px 0;
+}
+
+.about-grid {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+
+.stats-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.services-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.selling-grid {
+grid-template-columns: 1fr;
+}
+
+.process-timeline {
+grid-template-columns: repeat(2, 1fr);
+gap: 32px;
+}
+
+.process-timeline::before {
+display: none;
+}
+
+.testimonials-grid {
+grid-template-columns: 1fr;
+}
+
+.faq-grid {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+
+.location-grid {
+grid-template-columns: 1fr;
+}
+
+.contact-grid {
+grid-template-columns: 1fr;
+gap: 40px;
+}
+
+.footer-grid {
+grid-template-columns: 1fr;
+gap: 36px;
+}
+}
+
+@media (max-width: 480px) {
+.container {
+padding: 0 16px;
+}
+
+.hero {
+min-height: 75vh;
+}
+
+.hero h1 {
+font-size: 2rem;
+}
+
+.hero-buttons {
+flex-direction: column;
+}
+
+.btn-primary, .btn-outline {
+width: 100%;
+justify-content: center;
+}
+
+.stats-grid {
+grid-template-columns: 1fr;
+}
+
+.services-grid {
+grid-template-columns: 1fr;
+}
+
+.process-timeline {
+grid-template-columns: 1fr;
+}
+
+.selling-card {
+flex-direction: column;
+gap: 16px;
+}
+
+.hours-card {
+padding: 28px;
+}
+
+.contact-form {
+padding: 28px;
+}
+
+.call-cta {
+width: 100%;
+justify-content: center;
+font-size: 1.05rem;
+padding: 18px 28px;
+}
+
+.contact-info {
+padding-right: 0;
+}
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+from { transform: translateY(20px); opacity: 0.4; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-badge {
+animation: fadeInUp 0.6s ease both;
+}
+
+.hero h1 {
+animation: fadeInUp 0.6s 0.15s ease both;
+}
+
+.hero p {
+animation: fadeInUp 0.6s 0.3s ease both;
+}
+
+.hero-buttons {
+animation: fadeInUp 0.6s 0.45s ease both;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="container nav-inner">
+<a href="#" class="nav-logo">Hidden <span>Minx</span></a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#process">How It Works</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact" class="nav-cta-link">Book Now</a></li>
+</ul>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">How It Works</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-blob-1"></div>
+<div class="hero-blob-2"></div>
+<div class="hero-pattern">
+<svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+<circle cx="1100" cy="200" r="120" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+<circle cx="1100" cy="200" r="200" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+<circle cx="1100" cy="200" r="300" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+<circle cx="1100" cy="200" r="400" fill="none" stroke="rgba(255,255,255,0.015)" stroke-width="1"/>
+<line x1="0" y1="600" x2="400" y2="800" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+<line x1="100" y1="600" x2="500" y2="800" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+<line x1="200" y1="600" x2="600" y2="800" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+</svg>
+</div>
+<div class="hero-decorative">
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:rgba(212,168,67,0.15)"/>
+<stop offset="100%" style="stop-color:rgba(52,152,219,0.1)"/>
+</linearGradient>
+</defs>
+<circle cx="250" cy="250" r="180" fill="url(#grad1)"/>
+<circle cx="250" cy="250" r="130" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+<circle cx="250" cy="250" r="220" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="8 8"/>
+<path d="M250 70 L260 230 L250 250 L240 230 Z" fill="rgba(212,168,67,0.08)"/>
+<path d="M250 430 L260 270 L250 250 L240 270 Z" fill="rgba(212,168,67,0.08)"/>
+<path d="M70 250 L230 240 L250 250 L230 260 Z" fill="rgba(212,168,67,0.08)"/>
+<path d="M430 250 L270 240 L250 250 L270 260 Z" fill="rgba(212,168,67,0.08)"/>
+</svg>
+</div>
+<div class="container hero-content">
+<div class="hero-badge">
+<i class="fas fa-scissors"></i>
+Highton's Favourite Local Salon
+</div>
+<h1>Hair That Feels Like You — <em>Only Better</em></h1>
+<p>Hidden Minx Hair Studio is Highton's welcoming salon where talented stylists listen first and create magic second. Walk in feeling hopeful, walk out feeling incredible.</p>
+<div class="hero-buttons">
+<a href="#contact" class="btn-primary">
+<i class="fas fa-calendar-check"></i>
+Book Your Appointment
+</a>
+<a href="tel:+61352428884" class="btn-outline">
+<i class="fas fa-phone"></i>
+Call (03) 5242 8884
+</a>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-text">
+<div class="section-label">About Us</div>
+<h2>The Little Salon on Barrabool Road That Keeps You Coming Back</h2>
+<p>Hidden Minx Hair Studio has been quietly building a loyal following in Highton — the kind of salon where clients stay for four, five years and counting, and trust every stylist in the team. Our girls, including Kaity and Annie, are known for being genuinely warm, bubbly, and laser-focused on understanding exactly what you want before touching a single strand.</p>
+<p>Whether it's your first visit or your fiftieth, we regularly check in throughout your appointment to make sure you're loving every step of the process. We're not the flashiest salon in Geelong — we're just the one people keep coming back to.</p>
+</div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-number">5★</div>
+<div class="stat-label">Client Rated</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">4+</div>
+<div class="stat-label">Years Trusted by Locals</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">100%</div>
+<div class="stat-label">Listening, Every Time</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Our Services</div>
+<h2>Everything Your Hair Needs, Under One Roof</h2>
+<p>From a simple trim to a full colour transformation — every service starts with a proper chat about what you actually want.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Cut &amp; Style</h3>
+<p>A precision cut tailored to your face shape, hair texture, and daily routine — not just what's trending on Instagram. Every cut starts with a proper consultation so you leave with hair that actually works for your life.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Colour &amp; Highlights</h3>
+<p>From subtle balayage to bold transformations, our stylists take the time to understand the exact shade and tone you're after. We'll talk you through maintenance and aftercare so your colour stays vibrant between visits.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Kids &amp; Teen Hair</h3>
+<p>We love welcoming younger clients and making their salon experience a positive one — just ask the mums who bring their daughters in to see Annie. A relaxed, pressure-free environment where kids and teens feel genuinely heard.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Blowouts &amp; Styling</h3>
+<p>Whether it's a Geelong Cup event, a wedding, or just a Friday night out, we'll style your hair to last. Our team will chat through your outfit, the occasion, and the vibe you're going for before we start.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Hair Treatments &amp; Repair</h3>
+<p>Dry, damaged, or just feeling flat — we'll assess your hair's condition and recommend treatments that actually make a difference. Think of it as a reset for hair that's been through a Geelong winter or too many DIY box dyes.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SELLING POINTS -->
+<section class="selling-points" id="why-us">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Why Choose Us</div>
+<h2>What Makes Hidden Minx Different</h2>
+<p>It's not just about great hair — it's about the experience from the moment you walk through our door.</p>
+</div>
+<div class="selling-grid">
+<div class="selling-card">
+<div class="selling-icon"><i class="fas fa-ear-listen"></i></div>
+<div>
+<h3>Stylists Who Actually Listen</h3>
+<p>Every appointment starts with a genuine conversation about what you want — not what we think you should have. Our team checks in with you throughout the process to make sure you're happy at every stage.</p>
+</div>
+</div>
+<div class="selling-card">
+<div class="selling-icon"><i class="fas fa-heart"></i></div>
+<div>
+<h3>Clients Who Stay for Years</h3>
+<p>Many of our clients have been coming to Hidden Minx for four years or more, trusting different stylists across the team. That kind of loyalty isn't bought — it's earned through consistently great results.</p>
+</div>
+</div>
+<div class="selling-card">
+<div class="selling-icon"><i class="fas fa-face-smile"></i></div>
+<div>
+<h3>A Warm, Unpretentious Vibe</h3>
+<p>Our studio feels more like catching up with a friend than sitting in a sterile salon chair. The girls are bubbly, welcoming, and genuinely interested in making your day better — not just your hair.</p>
+</div>
+</div>
+<div class="selling-card">
+<div class="selling-icon"><i class="fas fa-location-dot"></i></div>
+<div>
+<h3>Right Here in Highton</h3>
+<p>No fighting for parking in the Geelong CBD or navigating one-way streets. We're on Barrabool Road in Highton — easy to get to, easy to park, and right in the heart of your neighbourhood.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+<div class="container">
+<div class="section-header">
+<div class="section-label">How It Works</div>
+<h2>Your Visit in Four Simple Steps</h2>
+<p>From booking to walking out the door — here's what to expect when you visit Hidden Minx.</p>
+</div>
+<div class="process-timeline">
+<div class="process-step">
+<div class="step-number">1</div>
+<h3>Book Your Appointment</h3>
+<p>Give us a call on (03) 5242 8884 and we'll find a time that suits you — whether it's a weekday escape or a Saturday morning treat.</p>
+</div>
+<div class="process-step">
+<div class="step-number">2</div>
+<h3>The Consultation Chat</h3>
+<p>Your stylist will sit down with you, look at any inspiration photos, and really understand what you're hoping for before we begin.</p>
+</div>
+<div class="process-step">
+<div class="step-number">3</div>
+<h3>Relax and Enjoy</h3>
+<p>Sit back while our team works their magic, checking in with you along the way to make sure everything is on track.</p>
+</div>
+<div class="process-step">
+<div class="step-number">4</div>
+<h3>Walk Out Feeling Amazing</h3>
+<p>We'll show you the finished result, share any styling tips for at home, and book your next visit so you never go too long between appointments.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Testimonials</div>
+<h2>Don't Take Our Word for It — Hear From the Locals</h2>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<blockquote>"I had a wonderful experience with Kaity. She was very bubbly, friendly, and genuinely interested in what I wanted. Kaity did an incredibly professional job — my hair looks amazing. She regularly checked in throughout the appointment."</blockquote>
+<div class="testimonial-author">Melinda &amp; Colin Barton</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<blockquote>"Hidden Minx is honestly amazing! I think I've had all the girls do my hair at one point or another and have been a client of theirs for about 4ish years now. They're the best bunch of girls and I always leave feeling great."</blockquote>
+<div class="testimonial-author">Bronwyn Fitzgerald</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+<blockquote>"I took my daughter to see Annie a few weeks back — she was beyond amazing. Listened to everything she had to say and was extremely welcoming and professional. My daughter left absolutely thrilled."</blockquote>
+<div class="testimonial-author">Ami Rae</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="container">
+<div class="faq-grid">
+<div class="faq-intro">
+<div class="section-label">FAQ</div>
+<h2>Got Questions? We've Got Answers</h2>
+<p>Here are the things our clients ask us most. If you can't find what you're looking for, just give us a bell.</p>
+<div class="faq-contact-box">
+<p>Can't find your answer here?</p>
+<a href="tel:+61352428884"><i class="fas fa-phone"></i> (03) 5242 8884</a>
+</div>
+</div>
+<div class="faq-items">
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Do I need to book an appointment or can I walk in?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+We recommend booking ahead to make sure we can give you the time and attention you deserve. Give us a call on (03) 5242 8884 and we'll find a spot that works for you. That said, if you're passing by and we have availability, we're always happy to squeeze you in.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Can I request a specific stylist?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+Absolutely — many of our clients have their favourite and we're happy to book you in with them. That said, our regulars often say they trust every stylist on the team, so you're in great hands no matter who you see.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Is the salon suitable for kids and teenagers?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+Definitely. We regularly welcome younger clients and our stylists are brilliant at making them feel comfortable and involved in the process. Mums love that we take the time to listen to what their kids actually want, rather than just doing a quick trim and sending them on their way.
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Where exactly are you and is parking easy?
+<i class="fas fa-chevron-down"></i>
+</button>
+<div class="faq-answer">
+We're at 89A Barrabool Road in Highton, just a short drive from the Highton Village shops. Parking is straightforward — no meters, no stress. It's one of the perks of being a local neighbourhood salon rather than a CBD one.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="location" id="location">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Find Us</div>
+<h2>Hours &amp; Location</h2>
+<p>We're right on Barrabool Road in Highton — easy to find, easy to park.</p>
+</div>
+<div class="location-grid">
+<div class="hours-card">
+<h3><i class="fas fa-clock" style="color:var(--blue-400);margin-right:10px;"></i>Opening Hours</h3>
+<ul class="hours-list">
+<li><span class="day">Monday</span><span class="time">9:00 AM – 6:00 PM</span></li>
+<li><span class="day">Tuesday</span><span class="time">9:00 AM – 6:00 PM</span></li>
+<li><span class="day">Wednesday</span><span class="time">9:00 AM – 7:00 PM</span></li>
+<li><span class="day">Thursday</span><span class="time">9:00 AM – 9:00 PM</span></li>
+<li><span class="day">Friday</span><span class="time">9:00 AM – 5:00 PM</span></li>
+<li><span class="day">Saturday</span><span class="time">8:00 AM – 2:00 PM</span></li>
+<li><span class="day">Sunday</span><span class="time closed">Closed</span></li>
+</ul>
+</div>
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.8!2d144.3!3d-38.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad416d08e0e1f21%3A0x7a8b0b6e0e5e0e0e!2s89A+Barrabool+Rd%2C+Highton+VIC+3218!5e0!3m2!1sen!2sau!4v1699999999999!5m2!1sen!2sau" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hidden Minx Hair Studio location on Google Maps"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+<div class="contact-grid">
+<div class="contact-info">
+<div class="section-label">Get In Touch</div>
+<h2>Ready to Book? Let's Chat</h2>
+<p>The easiest way to book is to give us a call. We'll have a quick chat about what you're after and find a time that suits.</p>
+<a href="tel:+61352428884" class="call-cta">
+<i class="fas fa-phone"></i>
+Call (03) 5242 8884
+</a>
+<div class="contact-details">
+<div class="contact-detail">
+<i class="fas fa-location-dot"></i>
+<span>89A Barrabool Rd, Highton VIC 3218, Australia</span>
+</div>
+<div class="contact-detail">
+<i class="fas fa-phone"></i>
+<span>(03) 5242 8884</span>
+</div>
+<div class="contact-detail">
+<i class="fas fa-clock"></i>
+<span>Mon–Fri: 9AM – varies | Sat: 8AM – 2PM | Sun: Closed</span>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<h3>Send Us a Message</h3>
+<form action="mailto:info@hiddenminx.com.au" method="post" enctype="text/plain">
+<div class="form-group">
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" required placeholder="e.g. Sarah Johnson">
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required placeholder="e.g. sarah@email.com">
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="e.g. 0412 345 678">
+</div>
+<div class="form-group">
+<label for="message">Your Message</label>
+<textarea id="message" name="message" required placeholder="Tell us what you're looking for — a cut, colour, or something else..."></textarea>
+</div>
+<button type="submit" class="form-submit">
+<i class="fas fa-paper-plane"></i>
+Send Message
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<h3>Hidden <span>Minx</span></h3>
+<p>Highton's welcoming salon where talented stylists listen first and create magic second. Walk in feeling hopeful, walk out feeling incredible.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<ul class="footer-links">
+<li><a href="#about">About Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#process">How It Works</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Contact Details</h4>
+<ul class="footer-contact-list">
+<li><i class="fas fa-location-dot"></i> 89A Barrabool Rd, Highton VIC 3218</li>
+<li><i class="fas fa-phone"></i> <a href="tel:+61352428884">(03) 5242 8884</a></li>
+<li><i class="fas fa-clock"></i> Mon–Fri 9AM | Sat 8AM–2PM</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Hidden Minx Hair Studio. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', function() {
+this.classList.toggle('active');
+mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu when a link is clicked
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(function(link) {
+link.addEventListener('click', function() {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('open');
+});
+});
+
+// FAQ Accordion
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(function(item) {
+const question = item.querySelector('.faq-question');
+question.addEventListener('click', function() {
+const isActive = item.classList.contains('active');
+// Close all others
+faqItems.forEach(function(otherItem) {
+otherItem.classList.remove('active');
+otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+});
+// Toggle current
+if (!isActive) {
+item.classList.add('active');
+question.setAttribute('aria-expanded', 'true');
+}
+});
+});
+
+// Navbar scroll shadow
+window.addEventListener('scroll', function() {
+const navbar = document.getElementById('navbar');
+if (window.scrollY > 10) {
+navbar.classList.add('scrolled');
+} else {
+navbar.classList.remove('scrolled');
+}
+});
+</script>
+</body>
+</html>
